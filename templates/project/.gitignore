@@ -1,0 +1,35 @@
+# package managers
+/node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# environments
+.env*
+!.env.staging
+!.env.production
+
+app*.json
+!app.staging.json
+!app.production.json
+
+# others
+.vscode
+.idea
+.DS_Store
+
+# testing
+/coverage
+/test-reports
+.jest
+
+# expo
+/.expo
+/web-build
+/web-report
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*

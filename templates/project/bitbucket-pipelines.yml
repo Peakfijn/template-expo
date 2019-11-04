@@ -1,0 +1,126 @@
+---
+image: bycedric/expo-cli:3
+definitions:
+  caches:
+    jest: .jest
+    npm: ~/.npm
+    sonar: ~/.sonar/cache
+pipelines:
+  pull-requests:
+    '**':
+      - parallel:
+          - step:
+              name: Validate commits
+              image: peakfijn/commitlint
+              script:
+                - commitlint --to HEAD
+          - step:
+              name: Validate code
+              caches:
+                - jest
+                - npm
+              script:
+                - cp .env.staging .env
+                - cp app.staging.json app.json
+                - npm ci
+                - npm run lint
+                - npm run test -- --coverage
+          - step:
+              name: Analyse code
+              image: bycedric/ci-sonarcloud
+              caches:
+                - sonar
+              script:
+                - sonar-bitbucket
+  branches:
+    develop:
+      - parallel:
+          - step:
+              name: Validate code
+              caches:
+                - jest
+                - npm
+              script:
+                - cp .env.staging .env
+                - cp app.staging.json app.json
+                - npm ci
+                - npm run lint
+                - npm run test -- --coverage
+          - step:
+              name: Analyse code
+              image: bycedric/ci-sonarcloud
+              caches:
+                - sonar
+              script:
+                - sonar-bitbucket
+      - step:
+          name: Create new release
+          image: peakfijn/release-expo
+          trigger: manual
+          script:
+            - semantic-release
+    master:
+      - step:
+          name: Publish staging
+          deployment: staging
+          script:
+            - cp .env.staging .env
+            - cp app.staging.json app.json
+            - npm ci
+            - expo login -u $EXPO_CLI_USERNAME
+            - expo publish --non-interactive
+      - step:
+          name: Publish production
+          deployment: production
+          trigger: manual
+          script:
+            - cp .env.production .env
+            - cp app.production.json app.json
+            - npm ci
+            - expo login -u $EXPO_CLI_USERNAME
+            - expo publish --non-interactive
+  custom:
+    build-staging:
+      - step:
+          name: Build staging
+          caches:
+            - npm
+          script:
+            - cp .env.staging .env
+            - cp app.staging.json app.json
+            - npm ci
+            - expo login -u $EXPO_CLI_USERNAME
+            - expo build:android --non-interactive --no-wait --no-publish
+            - expo build:ios --non-interactive --no-wait --no-publish
+    build-production:
+      - step:
+          name: Build production
+          caches:
+            - npm
+          script:
+            - cp .env.production .env
+            - cp app.production.json app.json
+            - npm ci
+            - expo login -u $EXPO_CLI_USERNAME
+            - expo build:android --non-interactive --no-wait --no-publish
+            - expo build:ios --non-interactive --no-wait --no-publish
+    publish-staging:
+      - step:
+          name: Publish staging
+          deployment: staging
+          script:
+            - cp .env.staging .env
+            - cp app.staging.json app.json
+            - npm ci
+            - expo login -u $EXPO_CLI_USERNAME
+            - expo publish --non-interactive
+    publish-production:
+      - step:
+          name: Publish production
+          deployment: production
+          script:
+            - cp .env.production .env
+            - cp app.production.json app.json
+            - npm ci
+            - expo login -u $EXPO_CLI_USERNAME
+            - expo publish --non-interactive
