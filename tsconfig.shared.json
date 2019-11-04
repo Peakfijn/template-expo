@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"composite": true,
+		"declaration": true,
+		"esModuleInterop": true,
+		"lib": [
+			"es6"
+		],
+		"module": "commonjs",
+		"noImplicitAny": true,
+		"jsx": "react",
+		"removeComments": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"target": "es5"
+	},
+	"exclude": [
+		"node_modules"
+	]
+}
