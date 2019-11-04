@@ -3,7 +3,7 @@ module.exports = {
 	moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
 	testPathIgnorePatterns: [
 		'<rootDir>/node_modules/',
-		'<rootDir>/template/',
+		'<rootDir>/templates/project/',
 	],
 	testRegex: '\\.test\\.(js|ts)x?$',
 	transform: {
