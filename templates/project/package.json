@@ -55,7 +55,7 @@
 		"jest-expo": "^35.0.0",
 		"jest-junit": "^9.0.0",
 		"jest-styled-components": "^6.3.3",
-		"typescript": "^3.4.5"
+		"typescript": "^3.7.2"
 	},
 	"config": {
 		"commitizen": {
