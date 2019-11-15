@@ -54,7 +54,7 @@
 		"jest": "^24.9.0",
 		"jest-expo": "^35.0.0",
 		"jest-junit": "^9.0.0",
-		"jest-styled-components": "^6.3.3",
+		"jest-styled-components": "^6.3.4",
 		"typescript": "^3.7.2"
 	},
 	"config": {
