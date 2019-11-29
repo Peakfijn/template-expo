@@ -49,7 +49,7 @@
 		"babel-preset-expo": "^7.1.0",
 		"eslint": "^6.6.0",
 		"eslint-plugin-jest": "^23.0.4",
-		"eslint-plugin-react": "^7.16.0",
+		"eslint-plugin-react": "^7.17.0",
 		"eslint-plugin-react-hooks": "^2.3.0",
 		"jest": "^24.9.0",
 		"jest-expo": "^35.0.0",
