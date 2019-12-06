@@ -14,7 +14,7 @@ module.exports = merge(expoPreset, testingLibraryPreset, {
 		'default',
 		['jest-junit', {
 			suiteName: 'App tests',
-			output: './test-reports/junit.xml',
+			outputDirectory: 'test-reports',
 		}],
 	],
 });
