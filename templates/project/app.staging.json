@@ -2,6 +2,7 @@
 	"expo": {
 		"name": "project-name (staging)",
 		"slug": "project-name",
+		"owner": "project-owner",
 		"privacy": "unlisted",
 		"sdkVersion": "35.0.0",
 		"platforms": [
@@ -9,7 +10,7 @@
 			"android",
 			"web"
 		],
-		"version": "1.0.0",
+		"version": "0.0.0",
 		"orientation": "portrait",
 		"icon": "./assets/images/app-icon.png",
 		"splash": {
@@ -21,7 +22,7 @@
 			"fallbackToCacheTimeout": 0
 		},
 		"assetBundlePatterns": [
-			"**/*"
+			"assets/**/*"
 		],
 		"ios": {
 			"supportsTablet": true
