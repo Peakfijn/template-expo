@@ -67,7 +67,7 @@ pipelines:
             - cp .env.staging .env
             - cp app.staging.json app.json
             - npm ci
-            - expo login -u $EXPO_CLI_USERNAME
+            - expo login --username $EXPO_CLI_USERNAME
             - expo publish --non-interactive
       - step:
           name: Publish production
@@ -77,33 +77,97 @@ pipelines:
             - cp .env.production .env
             - cp app.production.json app.json
             - npm ci
-            - expo login -u $EXPO_CLI_USERNAME
+            - expo login --username $EXPO_CLI_USERNAME
             - expo publish --non-interactive
   custom:
-    build-staging:
+    build-android-app-bundle-staging:
       - step:
-          name: Build staging
+          name: Build Android app bundle staging
           caches:
             - npm
           script:
             - cp .env.staging .env
             - cp app.staging.json app.json
             - npm ci
-            - expo login -u $EXPO_CLI_USERNAME
-            - expo build:android --non-interactive --no-wait --no-publish
-            - expo build:ios --non-interactive --no-wait --no-publish
-    build-production:
+            - expo login --username $EXPO_CLI_USERNAME
+            - expo build:android --type app-bundle --non-interactive --no-wait --no-publish
+    build-android-app-bundle-production:
       - step:
-          name: Build production
+          name: Build Android app bundle production
           caches:
             - npm
           script:
             - cp .env.production .env
             - cp app.production.json app.json
             - npm ci
-            - expo login -u $EXPO_CLI_USERNAME
-            - expo build:android --non-interactive --no-wait --no-publish
-            - expo build:ios --non-interactive --no-wait --no-publish
+            - expo login --username $EXPO_CLI_USERNAME
+            - expo build:android --type app-bundle --non-interactive --no-wait --no-publish
+    build-android-apk-staging:
+      - step:
+          name: Build Android APK staging
+          caches:
+            - npm
+          script:
+            - cp .env.staging .env
+            - cp app.staging.json app.json
+            - npm ci
+            - expo login --username $EXPO_CLI_USERNAME
+            - expo build:android --type apk --non-interactive --no-wait --no-publish
+    build-android-apk-production:
+      - step:
+          name: Build Android APK production
+          caches:
+            - npm
+          script:
+            - cp .env.production .env
+            - cp app.production.json app.json
+            - npm ci
+            - expo login --username $EXPO_CLI_USERNAME
+            - expo build:android --type apk --non-interactive --no-wait --no-publish
+    build-ios-archive-staging:
+      - step:
+          name: Build iOS archive staging
+          caches:
+            - npm
+          script:
+            - cp .env.staging .env
+            - cp app.staging.json app.json
+            - npm ci
+            - expo login --username $EXPO_CLI_USERNAME
+            - expo build:ios --type archive --non-interactive --no-wait --no-publish
+    build-ios-archive-production:
+      - step:
+          name: Build iOS archive production
+          caches:
+            - npm
+          script:
+            - cp .env.production .env
+            - cp app.production.json app.json
+            - npm ci
+            - expo login --username $EXPO_CLI_USERNAME
+            - expo build:ios --type archive --non-interactive --no-wait --no-publish
+    build-ios-simulator-staging:
+      - step:
+          name: Build iOS simulator staging
+          caches:
+            - npm
+          script:
+            - cp .env.staging .env
+            - cp app.staging.json app.json
+            - npm ci
+            - expo login --username $EXPO_CLI_USERNAME
+            - expo build:ios --type simulator --non-interactive --no-wait --no-publish
+    build-ios-simulator-production:
+      - step:
+          name: Build iOS simulator production
+          caches:
+            - npm
+          script:
+            - cp .env.production .env
+            - cp app.production.json app.json
+            - npm ci
+            - expo login --username $EXPO_CLI_USERNAME
+            - expo build:ios --type simulator --non-interactive --no-wait --no-publish
     publish-staging:
       - step:
           name: Publish staging
@@ -112,7 +176,7 @@ pipelines:
             - cp .env.staging .env
             - cp app.staging.json app.json
             - npm ci
-            - expo login -u $EXPO_CLI_USERNAME
+            - expo login --username $EXPO_CLI_USERNAME
             - expo publish --non-interactive
     publish-production:
       - step:
