@@ -11,6 +11,8 @@ on:
     paths:
       - 'templates/**'
       - '!templates/package/**'
+  schedule:
+    - cron: '0 8 * * 1'
 jobs:
   ci:
     name: Install, validate and build
