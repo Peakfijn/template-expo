@@ -1,12 +1,12 @@
 {
 	"private": true,
-	"name": "project-name",
+	"name": "project-slug",
 	"version": "0.0.0",
 	"license": "UNLICENSED",
 	"main": "node_modules/expo/AppEntry.js",
 	"repository": {
 		"type": "git",
-		"url": "git@bitbucket.org:peakfijn/project-name.git"
+		"url": "git@bitbucket.org:peakfijn/project-slug.git"
 	},
 	"scripts": {
 		"test": "jest",
