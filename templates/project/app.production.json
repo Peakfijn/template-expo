@@ -1,7 +1,7 @@
 {
 	"expo": {
-		"name": "project-name",
-		"slug": "project-name",
+		"name": "project-slug",
+		"slug": "project-slug",
 		"owner": "project-owner",
 		"privacy": "unlisted",
 		"sdkVersion": "35.0.0",

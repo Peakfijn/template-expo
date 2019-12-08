@@ -13,7 +13,7 @@ module.exports = merge(expoPreset, testingLibraryPreset, {
 	reporters: [
 		'default',
 		['jest-junit', {
-			suiteName: 'App tests',
+			suiteName: 'Project-Name tests',
 			outputDirectory: 'test-reports',
 		}],
 	],

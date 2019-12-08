@@ -1,7 +1,7 @@
 {
 	"expo": {
-		"name": "project-name (staging)",
-		"slug": "project-name",
+		"name": "project-slug (staging)",
+		"slug": "project-slug-staging",
 		"owner": "project-owner",
 		"privacy": "unlisted",
 		"sdkVersion": "35.0.0",

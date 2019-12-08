@@ -1,6 +1,4 @@
-# PROJECT-NAME
-
-PROJECT-INFO
+# Project-Name
 
 - [Project Notes](#markdown-header-project-notes)
 - [Getting started](#markdown-header-getting-started)
