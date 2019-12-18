@@ -35,7 +35,7 @@
 	"devDependencies": {
 		"@peakfijn/config-commitizen": "^2.1.0",
 		"@peakfijn/config-commitlint": "^2.1.0",
-		"@peakfijn/config-release-expo": "^2.1.0",
+		"@peakfijn/expo-semantic-release": "^0.0.0",
 		"@testing-library/react-native": "^5.0.3",
 		"@types/jest": "^24.0.24",
 		"@types/lodash": "^4.14.149",
@@ -69,6 +69,6 @@
 		]
 	},
 	"release": {
-		"extends": "@peakfijn/config-release-expo"
+		"extends": "@peakfijn/expo-semantic-release"
 	}
 }

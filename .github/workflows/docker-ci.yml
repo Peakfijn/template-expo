@@ -1,0 +1,34 @@
+---
+  name: Docker CI
+  on:
+    push:
+      branches:
+        - master
+      paths-ignore:
+        - 'templates/**'
+        - '!templates/package/**'
+    schedule:
+      - cron: '0 8 * * 1'
+  jobs:
+    expo-semantic-release:
+      name: Expo Semantic Release
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v1
+        - name: Build image
+          working-directory: packages/expo-semantic-release
+          run: >
+            docker build . \
+              --build-arg PACKAGE_VERSION=latest \
+              --tag peakfijn/expo-semantic-release:1
+        - name: Test image
+          working-directory: packages/expo-semantic-release
+          run: docker run --rm peakfijn/expo-semantic-release:1 semantic-release --version
+        - name: Authenticate docker
+          run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u bycedric --password-stdin
+        - name: Publish image
+          working-directory: packages/expo-semantic-release
+          run: |
+            docker tag peakfijn/expo-semantic-release:1 peakfijn/expo-semantic-release:latest
+            docker push peakfijn/expo-semantic-release:1
+            docker push peakfijn/expo-semantic-release:latest
