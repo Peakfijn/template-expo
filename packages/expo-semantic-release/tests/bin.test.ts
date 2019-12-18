@@ -1,4 +1,3 @@
-import path from 'path';
 import pkg from '../package';
 
 it('has binary alias defined in package file', () => {
