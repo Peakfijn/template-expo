@@ -16,7 +16,7 @@ _none_
 
 To get up and running and start developing, follow the steps below.
 
-1. Copy the following files adn set it up for your machine
+1. Copy the following files and set it up for your machine
 	- `.env.staging` to `.env`
 	- `app.staging.json` to `app.json`
 2. Install Node dependencies using `npm ci` (or `npm install`)
@@ -32,8 +32,9 @@ Here are some steps to quickly reset your local environment to start all over ag
 
 1. Make sure you followed the **Getting started** steps
 2. Reset all local changes to start over with these commands
-	- `git reset --hard HEAD` — resets all local changes to the last commit
+    - `npm run clean` — removes Expo instance settings and test reports
 	- `git checkout develop` — changes the current branch back to the main branch
+	- `git reset --hard HEAD` — resets all local changes to the last commit, _use with caution_
 	- `git clean -xdf ./src` — removes all files in src not listed in the repo, _use with caution_
 3. Reset node modules and node caches using `npm ci`
 
@@ -44,17 +45,17 @@ Here are some steps to quickly reset your local environment to start all over ag
 
 Every project needs a folder structure.
 This one uses the [Atomic Design][link-atomic-design] principles as structure.
-The rules are relatively simple, each folder has a specific meaning related to the types of components.
+The rules are relatively simple; each folder has a specific meaning related to the types of components.
 
-1. `atoms` — only the smallest "building blocks" of the project, like `text` or `buttons` _(may include other atoms)_
-2. `molecules` — a group of atoms with a reusable intention, like `app-frame` or `notifications` _(may include other atoms and molecules)_
-3. `organisms` — a group of components for a specific area of the project, like `Auth` or certain business-related pages _(may include or contain other atoms and molecules)_
+1. `atoms` — smallest components that don't refer domain-specific entities, like `Text` or `Button` _(may include other atoms)_
+2. `molecules` — small components which are reused multiple times and/or refer domain-specific entities, like `AppFrame` or `<Entity>Card` _(may include other atoms and molecules)_
+3. `organisms` — group of components for specific non-reused domain-specific areas of the project, like `Auth` or certain business-related pages _(may include or contain other atoms and molecules)_
 
 Next to these folders, there are some extra non-atomic folders with a special meaning.
 
-1. `providers` — a file, or group of files, that "provide" a certain feature or integration, like `theme` or `auth`
+1. `providers` — a file, or group of files, that "provide" features or integrations, like `theme`, `testing` or `sentry`
 2. `types` — some TypeScript definition files to "fix" untyped libraries, like `jest-styled-components.d.ts`
-3. `app.tsx` — **Expo only** the entrypoint for the whole Expo app, it renders the absolute basics for the app
+3. `app.tsx` — **Expo only** the entry point for the whole Expo app. It renders the full app using references to providers or organisms
 
 > We also recommend using a [folder-component][link-folder-component] for complex multi-file components.
 

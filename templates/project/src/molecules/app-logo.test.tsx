@@ -1,12 +1,7 @@
 import React from 'react';
+import { Linking } from 'react-native';
 import { fireEvent, render } from 'src/providers/testing';
 import { AppLogo } from './app-logo';
-
-const mockOpenURL = jest.fn();
-
-jest.mock('Linking', () => ({
-	openURL: mockOpenURL,
-}));
 
 it('renders peakfijn logo', () => {
 	const { getByLabelText } = render(<AppLogo />);
@@ -19,7 +14,8 @@ it('renders peakfijn logo', () => {
 it('links to peakfijn', () => {
 	const { getByRole } = render(<AppLogo />);
 	const link = getByRole('link');
+	const openURL = jest.spyOn(Linking, 'openURL');
 
 	fireEvent.press(link);
-	expect(mockOpenURL).toHaveBeenCalledWith('https://peakfijn.nl');
+	expect(openURL).toHaveBeenCalledWith('https://peakfijn.nl');
 });
