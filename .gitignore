@@ -1,3 +1,7 @@
+# typescript files
+build
+tsconfig.*tsbuildinfo
+
 # packages
 packages/*/build
 packages/*/package-lock.json
