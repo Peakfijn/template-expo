@@ -1,5 +1,4 @@
 {
-	"private": true,
 	"name": "@peakfijn/expo-semantic-release",
 	"version": "0.0.0",
 	"description": "Prepared config for semantic releases with Expo",
