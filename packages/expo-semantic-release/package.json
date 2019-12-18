@@ -1,0 +1,51 @@
+{
+	"private": true,
+	"name": "@peakfijn/expo-semantic-release",
+	"version": "0.0.0",
+	"description": "Prepared config for semantic releases with Expo",
+	"keywords": [
+		"semantic",
+		"release",
+		"expo",
+		"peakfijn"
+	],
+	"author": "Cedric van Putten <me@bycedric.com>",
+	"license": "MIT",
+	"homepage": "https://github.com/peakfijn/template-expo/tree/master/packages/expo-semantic-release#readme",
+	"bugs": {
+		"url": "https://github.com/peakfijn/template-expo/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/peakfijn/template-expo.git"
+	},
+	"directories": {
+		"lib": "src",
+		"tests": "tests"
+	},
+	"main": "build/config.js",
+	"files": [
+		"build"
+	],
+	"bin": {
+		"semantic-release": "build/bin.js"
+	},
+	"dependencies": {
+		"@semantic-release/changelog": "^3.0.6",
+		"@semantic-release/commit-analyzer": "^6.3.3",
+		"@semantic-release/npm": "^5.3.4",
+		"@semantic-release/release-notes-generator": "^7.3.5",
+		"conventional-changelog-peakfijn": "^2.1.0",
+		"release-rules-peakfijn": "^2.1.0",
+		"semantic-release": "^15.13.31",
+		"semantic-release-expo": "^2.2.3",
+		"semantic-release-git-branches": "^1.2.1"
+	},
+	"devDependencies": {
+		"@types/jest": "^24.0.19",
+		"@types/lodash": "^4.14.149",
+		"@types/node": "^12.12.21",
+		"@types/semantic-release": "^15.13.1",
+		"lodash": "^4.17.15"
+	}
+}

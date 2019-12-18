@@ -1,6 +1,6 @@
 module.exports = {
 	clearMocks: true,
-	moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+	moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
 	testPathIgnorePatterns: [
 		'<rootDir>/node_modules/',
 		'<rootDir>/templates/project/',
