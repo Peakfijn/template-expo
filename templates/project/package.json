@@ -20,7 +20,7 @@
 	},
 	"dependencies": {
 		"expo": "^36.0.2",
-		"expo-asset": "~8.0.0",
+		"expo-asset": "~8.1.2",
 		"lodash": "^4.17.15",
 		"react": "~16.9.0",
 		"react-dom": "~16.13.0",
