@@ -36,7 +36,7 @@
 		"@semantic-release/release-notes-generator": "^9.0.1",
 		"conventional-changelog-peakfijn": "^2.1.0",
 		"release-rules-peakfijn": "^2.1.0",
-		"semantic-release": "^15.13.31",
+		"semantic-release": "^17.1.1",
 		"semantic-release-expo": "^2.2.3",
 		"semantic-release-git-branches": "^1.2.1"
 	},
