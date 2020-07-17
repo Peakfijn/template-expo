@@ -43,7 +43,7 @@
 	"devDependencies": {
 		"@types/jest": "^25.1.4",
 		"@types/lodash": "^4.14.149",
-		"@types/semantic-release": "^15.13.1",
+		"@types/semantic-release": "^17.1.0",
 		"lodash": "^4.17.15"
 	}
 }
