@@ -41,7 +41,7 @@
 		"semantic-release-git-branches": "^1.2.1"
 	},
 	"devDependencies": {
-		"@types/jest": "^25.1.4",
+		"@types/jest": "^26.0.7",
 		"@types/lodash": "^4.14.149",
 		"@types/semantic-release": "^15.13.1",
 		"lodash": "^4.17.15"
