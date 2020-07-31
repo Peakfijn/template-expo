@@ -19,7 +19,7 @@
 		"commit": "git-cz"
 	},
 	"dependencies": {
-		"expo": "^36.0.2",
+		"expo": "^38.0.9",
 		"expo-asset": "~8.1.7",
 		"lodash": "^4.17.19",
 		"react": "~16.9.0",
